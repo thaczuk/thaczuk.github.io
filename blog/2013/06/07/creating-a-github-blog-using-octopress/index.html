@@ -64,6 +64,7 @@ Here are some key differences in &hellip;">
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
+
 </ul>
 
 </nav>
@@ -114,13 +115,14 @@ to results posted in the past year.</p>
     <li><a href="http://paulsturgess.co.uk/blog/2013/04/24/hello-octopress-and-github-pages/" title="Paul Sturgess">Paul Sturgess</a></li>
     <li><a href="http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/" title="Tom Ordonez">Tom Ordonez</a></li>
     <li><a href="http://schuyler.info/blog/how-to-setup-a-new-octopress-blog-on-github-pages.html" title="Schuyler Erle">Schuyler Erle</a></li>
-    <li><a href="http://daringfireball.net/projects/markdown/basics" title="John Gruber">John Gruber</a></li>
+    <li><a href="http://daringfireball.net/projects/markdown/basics" title="John Gruber">John Gruber: Markdown Basics</a></li>
+    <li><a href="http://tmpvar.com/markdown.html" title="Elijah Insua">Elijah Insua: Markdown Previewer</a></li>
 </ul>
 
 
 <h2>Initial Setup</h2>
 
-<p>Paul Sturgess&rsquo;s tutorial was the closest match to the exact procedure I used. Thank you Paul.</p>
+<p>Paul Sturgess&#8217; tutorial was the closest match to the exact procedure I used. Thank you Paul.</p>
 
 <p>Create a new Github repo named yourgithubusername.github.io</p>
 
@@ -190,7 +192,7 @@ Note: This was a clue. Octopress rendered locally but not remotely through Githu
 <p>Go to the app folder source/_posts to find the new posting
 Edit the posting and then follow these steps</p>
 
-<p>$ bundle exec rake  <br />
+<p>$ bundle exec rake  generate<br />
 $ git add . <br />
 $ git commit -m &lsquo;Initial blog post&rsquo; <br />
 $ git push origin source <br />
@@ -264,16 +266,40 @@ $ bundle exec rake deploy <br /></p>
     
   </ul>
 </section>
-Included file 'asides/twitter.html' not found in _includes directory
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/111664949033286822151?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
+<section>
+ <h1>Twitter</h1>
+ <a class="twitter-timeline"  href="https://twitter.com/thaczuk"  data-widget-id="343056298683809794">Tweets by @thaczuk</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/thaczuk">@thaczuk</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'thaczuk',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
 
 
   

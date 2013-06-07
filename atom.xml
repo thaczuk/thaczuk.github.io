@@ -4,7 +4,7 @@
   <title><![CDATA[Blessed Rage]]></title>
   <link href="http://thaczuk.github.io/atom.xml" rel="self"/>
   <link href="http://thaczuk.github.io/"/>
-  <updated>2013-06-07T11:09:43-06:00</updated>
+  <updated>2013-06-07T11:31:53-06:00</updated>
   <id>http://thaczuk.github.io/</id>
   <author>
     <name><![CDATA[Gregory Thaczuk]]></name>
@@ -35,13 +35,14 @@ to results posted in the past year.</p>
     <li><a href="http://paulsturgess.co.uk/blog/2013/04/24/hello-octopress-and-github-pages/" title="Paul Sturgess">Paul Sturgess</a></li>
     <li><a href="http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/" title="Tom Ordonez">Tom Ordonez</a></li>
     <li><a href="http://schuyler.info/blog/how-to-setup-a-new-octopress-blog-on-github-pages.html" title="Schuyler Erle">Schuyler Erle</a></li>
-    <li><a href="http://daringfireball.net/projects/markdown/basics" title="John Gruber">John Gruber</a></li>
+    <li><a href="http://daringfireball.net/projects/markdown/basics" title="John Gruber">John Gruber: Markdown Basics</a></li>
+    <li><a href="http://tmpvar.com/markdown.html" title="Elijah Insua">Elijah Insua: Markdown Previewer</a></li>
 </ul>
 
 
 <h2>Initial Setup</h2>
 
-<p>Paul Sturgess&rsquo;s tutorial was the closest match to the exact procedure I used. Thank you Paul.</p>
+<p>Paul Sturgess&#8217; tutorial was the closest match to the exact procedure I used. Thank you Paul.</p>
 
 <p>Create a new Github repo named yourgithubusername.github.io</p>
 
@@ -111,7 +112,7 @@ Note: This was a clue. Octopress rendered locally but not remotely through Githu
 <p>Go to the app folder source/_posts to find the new posting
 Edit the posting and then follow these steps</p>
 
-<p>$ bundle exec rake  <br />
+<p>$ bundle exec rake  generate<br />
 $ git add . <br />
 $ git commit -m &lsquo;Initial blog post&rsquo; <br />
 $ git push origin source <br />
