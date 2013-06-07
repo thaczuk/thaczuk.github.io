@@ -92,7 +92,10 @@ $rake new_post["Creating a Github Blog Using Octopress"]
 Go to the app folder source/_posts to find the new posting
 Edit the posting and then follow these steps
 
-$bundle exec rake generate
-$bundle exec rake deploy
+$ bundle exec rake generate
+$ git add .
+$ git commit -m 'Initial blog post'
+$ git push origin source
+$ bundle exec rake deploy
 
 Load up http://yourgithubusername.github.io
