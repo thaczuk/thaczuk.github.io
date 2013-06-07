@@ -21,12 +21,13 @@ to results posted in the past year.
     <li><a href="http://paulsturgess.co.uk/blog/2013/04/24/hello-octopress-and-github-pages/" title="Paul Sturgess">Paul Sturgess</a></li>
     <li><a href="http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/" title="Tom Ordonez">Tom Ordonez</a></li>
     <li><a href="http://schuyler.info/blog/how-to-setup-a-new-octopress-blog-on-github-pages.html" title="Schuyler Erle">Schuyler Erle</a></li>
-    <li><a href="http://daringfireball.net/projects/markdown/basics" title="John Gruber">John Gruber</a></li>
+    <li><a href="http://daringfireball.net/projects/markdown/basics" title="John Gruber">John Gruber: Markdown Basics</a></li>
+    <li><a href="http://tmpvar.com/markdown.html" title="Elijah Insua">Elijah Insua: Markdown Previewer</a></li>
 </ul>
 
 Initial Setup
 ---------------------
-Paul Sturgess's tutorial was the closest match to the exact procedure I used. Thank you Paul.
+Paul Sturgess' tutorial was the closest match to the exact procedure I used. Thank you Paul.
 
 Create a new Github repo named yourgithubusername.github.io
 
@@ -92,7 +93,7 @@ $ rake new_post["Creating a Github Blog Using Octopress"]
 Go to the app folder source/_posts to find the new posting
 Edit the posting and then follow these steps
 
-$ bundle exec rake  <br />
+$ bundle exec rake  generate<br />
 $ git add . <br />
 $ git commit -m 'Initial blog post' <br />
 $ git push origin source <br />
