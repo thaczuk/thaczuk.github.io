@@ -1,12 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>
+            http://thaczuk.github.io/blog/2013/06/07/creating-a-github-blog-using-octopress/
+        </loc>
+        <lastmod>2013-06-07T10:39:09-06:00</lastmod>
+    </url>
+    <url>
         <loc>http://thaczuk.github.io/blog/archives/</loc>
-        <lastmod>2013-06-07T09:05:51-06:00</lastmod>
+        <lastmod>2013-06-07T10:39:09-06:00</lastmod>
     </url>
     <url>
         <loc>http://thaczuk.github.io/</loc>
-        <lastmod>2013-06-07T09:05:51-06:00</lastmod>
+        <lastmod>2013-06-07T10:39:09-06:00</lastmod>
     </url>
     <url>
         <loc>http://thaczuk.github.io/robots.txt</loc>

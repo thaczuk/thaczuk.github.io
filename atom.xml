@@ -4,7 +4,7 @@
   <title><![CDATA[Blessed Rage]]></title>
   <link href="http://thaczuk.github.io/atom.xml" rel="self"/>
   <link href="http://thaczuk.github.io/"/>
-  <updated>2013-06-07T09:06:03-06:00</updated>
+  <updated>2013-06-07T10:39:21-06:00</updated>
   <id>http://thaczuk.github.io/</id>
   <author>
     <name><![CDATA[Gregory Thaczuk]]></name>
@@ -12,5 +12,111 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Creating a Github Blog Using Octopress]]></title>
+    <link href="http://thaczuk.github.io/blog/2013/06/07/creating-a-github-blog-using-octopress/"/>
+    <updated>2013-06-07T09:33:00-06:00</updated>
+    <id>http://thaczuk.github.io/blog/2013/06/07/creating-a-github-blog-using-octopress</id>
+    <content type="html"><![CDATA[<h2>A typical exercise in infrustration</h2>
+
+<hr />
+
+<p>There are many online guides to setting up an Octopress blog using Github pages.
+Here are some key differences in my setup. Hopefully this will help find a solution faster and  avoid some of the frustration I went through.</p>
+
+<h3>Some helpful tutorials</h3>
+
+<p>The following sites where my main source of information. Although there are many others, these are the ones I used after limiting my Google search
+to results posted in the past year.</p>
+
+<ul>
+    <li><a href="http://octopress.org/docs/setup/" title="Octopress">Octopress</a></li>
+    <li><a href="http://paulsturgess.co.uk/blog/2013/04/24/hello-octopress-and-github-pages/" title="Paul Sturgess">Paul Sturgess</a></li>
+    <li><a href="http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/" title="Tom Ordonez">Tom Ordonez</a></li>
+    <li><a href="http://schuyler.info/blog/how-to-setup-a-new-octopress-blog-on-github-pages.html" title="Schuyler Erle">Schuyler Erle</a></li>
+    <li><a href="http://daringfireball.net/projects/markdown/basics" title="John Gruber">John Gruber</a></li>
+</ul>
+
+
+<h2>Initial Setup</h2>
+
+<p>Paul Sturgess&rsquo;s tutorial was the closest match to the exact procedure I used. Thank you Paul.</p>
+
+<p>Create a new Github repo named yourgithubusername.github.io</p>
+
+<p>The name is important here as Github Pages will automatically serve up the content at <a href="http://yourgithubusername.github.io">http://yourgithubusername.github.io</a></p>
+
+<h3>Grab Octopress and change directory:</h3>
+
+<p>Note: When you clone Octopress, it will create a directory named yourgithubusername.github.io</p>
+
+<p>$ git clone git://github.com/imathis/octopress.git yourgithubusername.github.io
+$ cd yourgithubusername.github.io</p>
+
+<p>$ gem install bundler
+$ bundle install</p>
+
+<h3>Install the default theme:</h3>
+
+<p>Note: I received an error if I ran rake install
+If someone can explain why I would appreciate it. I searched and found the solution: bundle exec all rake commands</p>
+
+<p>$ bundle exec rake install</p>
+
+<p>Octopress has a configuration rake task that automatically sets the repo up for easy deployment to Github Pages:
+Note: This will ask you for your Github Pages repository url.
+When prompted in the next command, make sure you enter: git@github <a href="https://github.com/username/username.github.io.git">https://github.com/username/username.github.io.git</a>
+If you omit the suffix &lsquo;git&rsquo; the following commands will not work with your repository and Octopress will only render locally with Pow</p>
+
+<p>$ bundle exec rake setup_github_pages</p>
+
+<p>This task does quite a few things. The most important is that it creates a new _deploy directory that is another git repository. This is where Octopress generates the flat website for deployment to the master branch of your repo on Github.</p>
+
+<p>All the Octopress code used to generate the website into the <em>deploy directory now lives in new branch called source. Note in the source branch the .gitignore includes </em>deploy so it doesn’t get committed in two places!</p>
+
+<p>This sounds more complicated than it is, Octopress has rake tasks to make this really easy to manage. It’s worth pushing up at this point to check everything works before tinkering:</p>
+
+<p>$ bundle exec rake generate
+$ bundle exec rake deploy</p>
+
+<p>This copies the generated files into _deploy, adds them to git, commits and pushes them up to the master branch.</p>
+
+<p>Visit <a href="http://yourgithubusername.github.io">http://yourgithubusername.github.io</a></p>
+
+<p>Note: the first time(s) I tried this it didn&rsquo;t work. WTF. I deleted my repository and recreated the repository. Still did not work.
+The error page said that Github would send me an email in about 10min. 20min. 30min. I still haven&rsquo;t received an email.</p>
+
+<p>At this point only the website has been committed, the source needs to be comitted separately via:
+Note: I tried this next but received an fatal error on the push. This was due to lack of &lsquo;git&rsquo; suffix as noted above.</p>
+
+<p>$ git add .
+$ git commit -m &lsquo;Initial Octopress source commit&rsquo;
+$ git push origin source
+$ bundle exec rake deploy</p>
+
+<h3>Running Octopress locally</h3>
+
+<p>Octopress works really well with POW server.
+Note: This was a clue. Octopress rendered locally but not remotely through Github.</p>
+
+<p>$ bundle exec rake preview</p>
+
+<p>Load up <a href="http://localhost:4000">http://localhost:4000</a></p>
+
+<h3>Create a new posting</h3>
+
+<p>$rake new_post[&ldquo;Creating a Github Blog Using Octopress&rdquo;]</p>
+
+<p>Go to the app folder source/_posts to find the new posting
+Edit the posting and then follow these steps</p>
+
+<p>$rake generate
+$git add .
+$git commit -m &ldquo;Initial blog post.&rdquo;
+$git push origin source
+$rake deploy</p>
+]]></content>
+  </entry>
   
 </feed>
