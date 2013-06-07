@@ -35,24 +35,24 @@ The name is important here as Github Pages will automatically serve up the conte
 ### Grab Octopress and change directory:
 Note: When you clone Octopress, it will create a directory named yourgithubusername.github.io
 
-$ git clone git://github.com/imathis/octopress.git yourgithubusername.github.io
-$ cd yourgithubusername.github.io
+'$ git clone git://github.com/imathis/octopress.git yourgithubusername.github.io'
+'$ cd yourgithubusername.github.io'
 
-$ gem install bundler
-$ bundle install
+'$ gem install bundler'
+'$ bundle install'
 
 ### Install the default theme:
 Note: I received an error if I ran rake install
 If someone can explain why I would appreciate it. I searched and found the solution: bundle exec all rake commands
 
-$ bundle exec rake install
+'$ bundle exec rake install'
 
 Octopress has a configuration rake task that automatically sets the repo up for easy deployment to Github Pages:
 Note: This will ask you for your Github Pages repository url.
 When prompted in the next command, make sure you enter: git@github https://github.com/username/username.github.io.git
 If you omit the suffix 'git' the following commands will not work with your repository and Octopress will only render locally with Pow
 
-$ bundle exec rake setup_github_pages
+'$ bundle exec rake setup_github_pages'
 
 This task does quite a few things. The most important is that it creates a new _deploy directory that is another git repository. This is where Octopress generates the flat website for deployment to the master branch of your repo on Github.
 
@@ -60,8 +60,8 @@ All the Octopress code used to generate the website into the _deploy directory n
 
 This sounds more complicated than it is, Octopress has rake tasks to make this really easy to manage. It’s worth pushing up at this point to check everything works before tinkering:
 
-$ bundle exec rake generate
-$ bundle exec rake deploy
+'$ bundle exec rake generate'
+'$ bundle exec rake deploy'
 
 This copies the generated files into _deploy, adds them to git, commits and pushes them up to the master branch.
 
@@ -73,29 +73,29 @@ The error page said that Github would send me an email in about 10min. 20min. 30
 At this point only the website has been committed, the source needs to be comitted separately via:
 Note: I tried this next but received an fatal error on the push. This was due to lack of 'git' suffix as noted above.
 
-$ git add .
-$ git commit -m 'Initial Octopress source commit'
-$ git push origin source
-$ bundle exec rake deploy
+'$ git add .'
+'$ git commit -m 'Initial Octopress source commit''
+'$ git push origin source'
+'$ bundle exec rake deploy'
 
 ### Running Octopress locally
 Octopress works really well with POW server.
 Note: This was a clue. Octopress rendered locally but not remotely through Github.
 
-$ bundle exec rake preview
+'$ bundle exec rake preview'
 
 Load up http://localhost:4000
 
 ### Create a new posting
-$rake new_post["Creating a Github Blog Using Octopress"]
+'$ rake new_post["Creating a Github Blog Using Octopress"]'
 
 Go to the app folder source/_posts to find the new posting
 Edit the posting and then follow these steps
 
-$ bundle exec rake generate
-$ git add .
-$ git commit -m 'Initial blog post'
-$ git push origin source
-$ bundle exec rake deploy
+'$ bundle exec rake generate'
+'$ git add .''
+'$ git commit -m 'Initial blog post''
+'$ git push origin source'
+'$ bundle exec rake deploy'
 
 Load up http://yourgithubusername.github.io
