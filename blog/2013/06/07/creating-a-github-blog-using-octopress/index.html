@@ -190,8 +190,11 @@ Note: This was a clue. Octopress rendered locally but not remotely through Githu
 <p>Go to the app folder source/_posts to find the new posting
 Edit the posting and then follow these steps</p>
 
-<p>$bundle exec rake generate
-$bundle exec rake deploy</p>
+<p>$ bundle exec rake generate
+$ git add .
+$ git commit -m &lsquo;Initial blog post&rsquo;
+$ git push origin source
+$ bundle exec rake deploy</p>
 
 <p>Load up <a href="http://yourgithubusername.github.io">http://yourgithubusername.github.io</a></p>
 </div>
