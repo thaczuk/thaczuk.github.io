@@ -164,7 +164,7 @@ $ bundle exec rake deploy</p>
 
 <p>This copies the generated files into _deploy, adds them to git, commits and pushes them up to the master branch.</p>
 
-<p>Visit <a href="http://yourgithubusername.github.io">http://yourgithubusername.github.io</a></p>
+<p>Load up <a href="http://yourgithubusername.github.io">http://yourgithubusername.github.io</a></p>
 
 <p>Note: the first time(s) I tried this it didn&rsquo;t work. WTF. I deleted my repository and recreated the repository. Still did not work.
 The error page said that Github would send me an email in about 10min. 20min. 30min. I still haven&rsquo;t received an email.</p>
@@ -193,11 +193,10 @@ Note: This was a clue. Octopress rendered locally but not remotely through Githu
 <p>Go to the app folder source/_posts to find the new posting
 Edit the posting and then follow these steps</p>
 
-<p>$rake generate
-$git add .
-$git commit -m &ldquo;Initial blog post.&rdquo;
-$git push origin source
-$rake deploy</p>
+<p>$bundle exec rake generate
+$bundle exec rake deploy</p>
+
+<p>Load up <a href="http://yourgithubusername.github.io">http://yourgithubusername.github.io</a></p>
 </div>
   
   
