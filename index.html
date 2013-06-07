@@ -133,25 +133,25 @@ to results posted in the past year.</p>
 
 <p>Note: When you clone Octopress, it will create a directory named yourgithubusername.github.io</p>
 
-<p>$ git clone git://github.com/imathis/octopress.git yourgithubusername.github.io
-$ cd yourgithubusername.github.io</p>
+<p>&lsquo;$ git clone git://github.com/imathis/octopress.git yourgithubusername.github.io&rsquo;
+&lsquo;$ cd yourgithubusername.github.io&rsquo;</p>
 
-<p>$ gem install bundler
-$ bundle install</p>
+<p>&lsquo;$ gem install bundler&rsquo;
+&lsquo;$ bundle install&rsquo;</p>
 
 <h3>Install the default theme:</h3>
 
 <p>Note: I received an error if I ran rake install
 If someone can explain why I would appreciate it. I searched and found the solution: bundle exec all rake commands</p>
 
-<p>$ bundle exec rake install</p>
+<p>&lsquo;$ bundle exec rake install&rsquo;</p>
 
 <p>Octopress has a configuration rake task that automatically sets the repo up for easy deployment to Github Pages:
 Note: This will ask you for your Github Pages repository url.
 When prompted in the next command, make sure you enter: git@github <a href="https://github.com/username/username.github.io.git">https://github.com/username/username.github.io.git</a>
 If you omit the suffix &lsquo;git&rsquo; the following commands will not work with your repository and Octopress will only render locally with Pow</p>
 
-<p>$ bundle exec rake setup_github_pages</p>
+<p>&lsquo;$ bundle exec rake setup_github_pages&rsquo;</p>
 
 <p>This task does quite a few things. The most important is that it creates a new _deploy directory that is another git repository. This is where Octopress generates the flat website for deployment to the master branch of your repo on Github.</p>
 
@@ -159,8 +159,8 @@ If you omit the suffix &lsquo;git&rsquo; the following commands will not work wi
 
 <p>This sounds more complicated than it is, Octopress has rake tasks to make this really easy to manage. It’s worth pushing up at this point to check everything works before tinkering:</p>
 
-<p>$ bundle exec rake generate
-$ bundle exec rake deploy</p>
+<p>&lsquo;$ bundle exec rake generate&rsquo;
+&lsquo;$ bundle exec rake deploy&rsquo;</p>
 
 <p>This copies the generated files into _deploy, adds them to git, commits and pushes them up to the master branch.</p>
 
@@ -172,32 +172,32 @@ The error page said that Github would send me an email in about 10min. 20min. 30
 <p>At this point only the website has been committed, the source needs to be comitted separately via:
 Note: I tried this next but received an fatal error on the push. This was due to lack of &lsquo;git&rsquo; suffix as noted above.</p>
 
-<p>$ git add .
-$ git commit -m &lsquo;Initial Octopress source commit&rsquo;
-$ git push origin source
-$ bundle exec rake deploy</p>
+<p>&lsquo;$ git add .&rsquo;
+&lsquo;$ git commit -m &#8216;Initial Octopress source commit&rsquo;&lsquo;
+&rsquo;$ git push origin source&#8217;
+&lsquo;$ bundle exec rake deploy&rsquo;</p>
 
 <h3>Running Octopress locally</h3>
 
 <p>Octopress works really well with POW server.
 Note: This was a clue. Octopress rendered locally but not remotely through Github.</p>
 
-<p>$ bundle exec rake preview</p>
+<p>&lsquo;$ bundle exec rake preview&rsquo;</p>
 
 <p>Load up <a href="http://localhost:4000">http://localhost:4000</a></p>
 
 <h3>Create a new posting</h3>
 
-<p>$rake new_post[&ldquo;Creating a Github Blog Using Octopress&rdquo;]</p>
+<p>&lsquo;$ rake new_post[&ldquo;Creating a Github Blog Using Octopress&rdquo;]&rsquo;</p>
 
 <p>Go to the app folder source/_posts to find the new posting
 Edit the posting and then follow these steps</p>
 
-<p>$ bundle exec rake generate
-$ git add .
-$ git commit -m &lsquo;Initial blog post&rsquo;
-$ git push origin source
-$ bundle exec rake deploy</p>
+<p>&lsquo;$ bundle exec rake generate&rsquo;
+&lsquo;$ git add .&rsquo;&lsquo;
+&rsquo;$ git commit -m &lsquo;Initial blog post&rsquo;&lsquo;
+&rsquo;$ git push origin source&#8217;
+&lsquo;$ bundle exec rake deploy&rsquo;</p>
 
 <p>Load up <a href="http://yourgithubusername.github.io">http://yourgithubusername.github.io</a></p>
 </div>
