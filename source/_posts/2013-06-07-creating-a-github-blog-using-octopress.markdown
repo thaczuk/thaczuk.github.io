@@ -43,7 +43,7 @@ $ gem install bundler <br />
 $ bundle install
 
 ### Install the default theme:
-Note: I received an error if I ran rake install
+Note: I received an error if I ran rake install <br />
 If someone can explain why I would appreciate it. I searched and found the solution: bundle exec all rake commands
 
 $ bundle exec rake install
